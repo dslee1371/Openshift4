@@ -17,8 +17,8 @@ git push -u origin master
 ```
 
 ## define naming rule 
--**domain name** : futuregen-ocp4.lab
--**cluster name** : t1
+- **domain name** : futuregen-ocp4.lab
+- **cluster name** : t1
 
 
 

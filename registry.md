@@ -18,7 +18,7 @@ podman run --name mirror-registry -p registry.t1.futuregen-ocp4.lab:5000 \
      -v /opt/registry/certs:/certs:z \
      -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
      -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
-     -d docker.io/library/registry:2:
+     -d docker.io/library/registry:2
 ```
 
 ## defined values for the certificate:

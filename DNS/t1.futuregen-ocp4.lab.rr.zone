@@ -1,0 +1,21 @@
+$ORIGIN 10.168.192.in-addr.arpa.
+$TTL 3600
+@       IN      SOA     dns.t1.futuregen-ocp4.lab. hostmaster.t1.futuregen-ocp4.lab. (
+                        2001062501 ; serial
+                        60         ; refresh (1 minute)
+                        15         ; retry (15 seconds)
+                        1800       ; expire (30 minutes)
+                        10         ; minimum (10 seconds)
+                        )
+;
+@       IN      NS      dns.t1.futuregen-ocp4.lab.
+;
+8       IN      PTR     api.t1.futuregen-ocp4.lab.
+8       IN      PTR     api-int.t1.futuregen-ocp4.lab.
+10     IN      PTR     boot.t1.futuregen-ocp4.lab.
+11     IN      PTR     dslee-master01.t1.futuregen-ocp4.lab.
+12     IN      PTR     dslee-master02.t1.futuregen-ocp4.lab.
+13     IN      PTR     dslee-master03.t1.futuregen-ocp4.lab.
+21     IN      PTR     dslee-worker01.t1.futuregen-ocp4.lab.
+22     IN      PTR     dslee-worker02.t1.futuregen-ocp4.lab.
+

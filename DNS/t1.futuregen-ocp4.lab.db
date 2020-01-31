@@ -1,0 +1,38 @@
+[root@dslee-haproxy dynamic]# cat t1.futuregen-ocp4.lab.db
+$ORIGIN .
+$TTL 86400 ; 1 seconds (for testing only)
+t1.futuregen-ocp4.lab IN SOA dns.t1.futuregen-ocp4.lab. hostmaster.t1.futuregen-ocp4.lab. (
+                   2015051404 ; serial
+                   3H ; refresh
+                   15 ; retry
+                   1W ; expire
+                   3H ; minimum (10 seconds)
+                   )
+                   NS dns.t1.futuregen-ocp4.lab.
+                   A 10.0.0.55
+$ORIGIN apps.t1.futuregen-ocp4.lab.
+$TTL 180        ; 3 minutes
+*             IN      A       192.168.10.1
+$ORIGIN t1.futuregen-ocp4.lab.
+$TTL 180        ; 3 minutes
+$TTL 3600       ; 1 hour
+dns     IN      A       10.0.0.55
+hostmaster      IN      A       192.168.10.1
+dslee-ocp4-monday       IN      A       192.168.10.1
+etcd-0  IN      A       192.168.10.11
+etcd-1  IN      A       192.168.10.12
+etcd-2  IN      A       192.168.10.13
+api     IN      A       192.168.10.1
+api-int IN      A       192.168.10.1
+dslee-boot      IN      A       192.168.10.10
+dslee-master01  IN      A       192.168.10.11
+dslee-master02  IN      A       192.168.10.12
+dslee-master03  IN      A       192.168.10.13
+dslee-worker01  IN      A       192.168.10.21
+dslee-worker02  IN      A       192.168.10.22
+registry        IN      A       10.0.0.80
+
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-0.t1.futuregen-ocp4.lab
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-1.t1.futuregen-ocp4.lab
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-2.t1.futuregen-ocp4.lab
+

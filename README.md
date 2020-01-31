@@ -29,4 +29,10 @@ git push -u origin master
 - haproxy
 - firewall setting
 
+## How to find and Replace Text Using sed command
+```
+#domain name change
+sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.db
+sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.rr.zone
 
+```

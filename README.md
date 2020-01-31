@@ -20,5 +20,13 @@ git push -u origin master
 - **domain name** : futuregen-ocp4.lab
 - **cluster name** : t1
 
+## option
+- mirror registry
+
+## Network connectivity
+- dhcp
+- dns
+- haproxy
+- firewall setting
 
 

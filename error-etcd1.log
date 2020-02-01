@@ -1,0 +1,11 @@
+[root@dslee-master01 core]# crictl logs 7f33462e3db8e
+I0201 15:34:26.414152       1 run.go:50] Version: v4.3.0-202001211731-dirty (25bb6aeb58135c38a667e849edf5244871be4992)
+I0201 15:34:26.415642       1 run.go:178] checking against etcd-0.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+E0201 15:34:26.416169       1 run.go:67] error looking up self for candidate IP 192.168.10.11: could not resolve member "etcd-0.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab."
+I0201 15:34:56.417167       1 run.go:178] checking against etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+E0201 15:34:56.418029       1 run.go:67] error looking up self for candidate IP 192.168.10.11: could not resolve member "etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab."
+I0201 15:35:26.417264       1 run.go:178] checking against etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+E0201 15:35:26.417820       1 run.go:67] error looking up self for candidate IP 192.168.10.11: could not resolve member "etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab."
+I0201 15:35:56.417642       1 run.go:178] checking against etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+E0201 15:35:56.418736       1 run.go:67] error looking up self for candidate IP 192.168.10.11: could not resolve member "etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab."
+

@@ -10,6 +10,8 @@ openshift-install create manifests --dir=/root/ocp43-install-20200201-1
 3. Save and exit the file.
 
 openshift-install create ignition-configs --dir=/root/ocp43-install-20200201-1
+
+openshift-install --dir=/root/ocp43-install-20200201-1 wait-for bootstrap-complete --log-level=info
 ```
 
 ## create a new repository on the command line
@@ -47,4 +49,5 @@ git push -u origin master
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.db
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.rr.zone
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' dhcpd.conf
+sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 ```

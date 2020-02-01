@@ -26,11 +26,10 @@ firewall-cmd --zone=public --add-port=22623/tcp --permanent
 firewall-cmd --reload
 
 #registry
-iptables -I INPUT -m state --state NEW -p udp -m tcp --dport 5000 -j ACCEPT;
+iptables -I INPUT -m state --state NEW -p tcp -m tcp --dport 5000 -j ACCEPT;
 iptables-save > /etc/sysconfig/iptables;
-firewall-cmd --zone=public --add-port=5000/tcp --permanent
+firewall-cmd --zone=insternal --add-port=5000/tcp --permanent
+firewall-cmd --zone=external --add-port=5000/tcp --permanent
 firewall-cmd --reload
-
-
 ```
 

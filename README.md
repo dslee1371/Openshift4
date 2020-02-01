@@ -1,5 +1,17 @@
 # ocp43install
 
+## create ignition
+```
+openshift-install create manifests --dir=/root/ocp43-install-20200201-1
+
+#Modify the manifests/cluster-scheduler-02-config.yml Kubernetes manifest file to prevent Pods from being scheduled on the control plane machines:
+1. Open the manifests/cluster-scheduler-02-config.yml file.
+2. Locate the mastersSchedulable parameter and set its value to False.
+3. Save and exit the file.
+
+openshift-install create ignition-configs --dir=/root/ocp43-install-20200201-1
+```
+
 ## create a new repository on the command line
 ```
 echo "# ocp43install" >> README.md

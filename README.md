@@ -56,3 +56,6 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.rr.z
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' dhcpd.conf
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 ```
+
+## to do list
+- [x] compare haproxy for 443 port 

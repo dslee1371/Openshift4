@@ -12,3 +12,6 @@ status:
     message: 'RouteHealthDegraded: failed to GET route: dial tcp 192.168.10.1:443:
       connect: no route to host'
 
+#workround
+1. modify dns record from haroxy ip to ingress host
+

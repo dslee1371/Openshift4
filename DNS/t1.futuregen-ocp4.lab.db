@@ -32,7 +32,7 @@ dslee-worker01  IN      A       192.168.10.21
 dslee-worker02  IN      A       192.168.10.22
 registry        IN      A       10.0.0.80
 
-_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-0.t1.futuregen-ocp4.lab
-_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-1.t1.futuregen-ocp4.lab
-_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-2.t1.futuregen-ocp4.lab
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-0
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-1
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-2
 

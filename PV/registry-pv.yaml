@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: registry-volume
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 100Gi
+  nfs:
+    path: /volumes/ocp43/registry
+    server: nfs.t1.futuregen-ocp4.lab
+  persistentVolumeReclaimPolicy: Retain

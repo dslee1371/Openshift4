@@ -12,6 +12,11 @@ openshift-install create manifests --dir=/root/ocp43-install-20200201-1
 openshift-install create ignition-configs --dir=/root/ocp43-install-20200201-1
 
 openshift-install --dir=/root/ocp43-install-20200201-1 wait-for bootstrap-complete --log-level=info
+
+openshift-install --dir=/root/ocp43-install-20200202-1 wait-for install-complete 
+
+export KUBECONFIG=/root/ocp43-install-20200202-1/auth/kubeconfig
+
 ```
 
 ## create a new repository on the command line

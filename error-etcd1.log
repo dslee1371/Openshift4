@@ -9,3 +9,35 @@ E0201 15:35:26.417820       1 run.go:67] error looking up self for candidate IP 
 I0201 15:35:56.417642       1 run.go:178] checking against etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
 E0201 15:35:56.418736       1 run.go:67] error looking up self for candidate IP 192.168.10.11: could not resolve member "etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab."
 
+[root@dslee-haproxy dynamic]# dig srv _etcd-server-ssl._tcp.t1.futuregen-ocp4.lab
+
+; <<>> DiG 9.11.4-P2-RedHat-9.11.4-9.P2.el7 <<>> srv _etcd-server-ssl._tcp.t1.futuregen-ocp4.lab
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47681
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 1, ADDITIONAL: 2
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;_etcd-server-ssl._tcp.t1.futuregen-ocp4.lab. IN        SRV
+
+;; ANSWER SECTION:
+_etcd-server-ssl._tcp.t1.futuregen-ocp4.lab. 3600 IN SRV 0 10 2380 etcd-1.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+_etcd-server-ssl._tcp.t1.futuregen-ocp4.lab. 3600 IN SRV 0 10 2380 etcd-2.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+_etcd-server-ssl._tcp.t1.futuregen-ocp4.lab. 3600 IN SRV 0 10 2380 etcd-0.t1.futuregen-ocp4.lab.t1.futuregen-ocp4.lab.
+
+;; AUTHORITY SECTION:
+t1.futuregen-ocp4.lab.  86400   IN      NS      dns.t1.futuregen-ocp4.lab.
+
+;; ADDITIONAL SECTION:
+dns.t1.futuregen-ocp4.lab. 3600 IN      A       10.0.0.55
+
+;; Query time: 0 msec
+;; SERVER: 10.0.0.55#53(10.0.0.55)
+;; WHEN: Sun Feb 02 10:33:52 KST 2020
+;; MSG SIZE  rcvd: 316
+
+## Solution
+
+named SRV check and delete fqdn to hostname

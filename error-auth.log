@@ -1,0 +1,14 @@
+d: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:09:36 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:09:46 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:09:56 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:10:06 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:10:16 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+2020/02/2 09:10:26 auth: error contacting auth provider (retrying in 10s): request to OAuth issuer endpoint https://oauth-openshift.apps.t1.futuregen-ocp4.lab/oauth/token failed: Head https://oauth-openshift.apps.t1.futuregen-ocp4.lab: dial tcp 192.168.10.1:443: connect: no route to host
+
+status:
+  conditions:
+  - lastTransitionTime: "2020-02-02T07:54:27Z"
+    message: 'RouteHealthDegraded: failed to GET route: dial tcp 192.168.10.1:443:
+      connect: no route to host'
+

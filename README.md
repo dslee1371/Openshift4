@@ -58,4 +58,5 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 ```
 
 ## to do list
-- [x] compare haproxy for 443 port 
+- [ ] compare haproxy for 443 port
+- [ ] check write permission for registry pv 

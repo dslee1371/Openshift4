@@ -2,3 +2,4 @@
 
 192.168.10.21	console-openshift-console.apps.t1.futuregen-ocp4.lab
 192.168.10.21	oauth-openshift.apps.t1.futuregen-ocp4.lab
+192.168.10.21	grafana-openshift-monitoring.apps.t1.futuregen-ocp4.lab

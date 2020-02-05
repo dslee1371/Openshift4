@@ -70,8 +70,32 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 - dns add ip record
 - server boot
 - change static ip addr to dynamic ip addr
-  
+- subscipriton configure and package install 
+```
+subsctiption-manager 4.3 enable
+yum install openshift-ansible openshift-clients jq
+systemctl disable --now firewalld.service
+```
+- create inventory
+```
+[all:vars]
+ansible_user=root 
+#ansible_become=True 
+
+
+openshift_kubeconfig_path="~/.kube/auth/config" 
+
+[new_workers] 
+dslee-worker03.t1.futuregen-ocp4.lab
+dslee-worker04.t1.futuregen-ocp4.lab
+```  
+- run the playbook:
+```
+cd /usr/share/ansible/openshift-ansible
+ansible-playbook -i /root/hosts-addnode playbooks/scaleup.yml 
+```
 
 ## to do list
 - [ ] compare haproxy for 443 port
 - [ ] check write permission for registry pv 
+- [x] add woker node as rhel opearating system 

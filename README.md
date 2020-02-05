@@ -39,6 +39,9 @@ git push -u origin master
 - **domain name** : futuregen-ocp4.lab
 - **cluster name** : t1
 - **hostname** : dslee-ocp4-master01(own name + service name + ocp role)
+- dslee-master01, dslee-master02, dslee-master03 to dslee-ocp4-master01
+- dslee-worker01, dslee-worker02 to dslee-ocp4-cworker01
+- dslee-rworker01, dslee-rworker02 to dslee-ocp4-rworker01
 
 ## option
 - mirror registry
@@ -57,6 +60,17 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.rr.z
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' dhcpd.conf
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 ```
+## add node
+- subject : add 2 node th rhel 7.6 
+- copy that template to new vm on the vcenter 
+- change vm resource like cpu, memory, network (2 servers, referenced recommand spec in document)
+- define host ip 
+- dhcp add reserve ip configuration
+- configiration static mac addr. for dhcp reserve mac
+- dns add ip record
+- server boot
+- change static ip addr to dynamic ip addr
+  
 
 ## to do list
 - [ ] compare haproxy for 443 port

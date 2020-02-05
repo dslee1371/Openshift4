@@ -98,4 +98,4 @@ ansible-playbook -i /root/hosts-addnode playbooks/scaleup.yml
 ## to do list
 - [ ] compare haproxy for 443 port
 - [ ] check write permission for registry pv 
-- [x] add woker node as rhel opearating system 
+- [x] Add the woker node as rhel opearating system 

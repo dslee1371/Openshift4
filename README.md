@@ -38,6 +38,7 @@ git push -u origin master
 ## define naming rule 
 - **domain name** : futuregen-ocp4.lab
 - **cluster name** : t1
+- **hostname** : dslee-ocp4-master01(own name + service name + ocp role)
 
 ## option
 - mirror registry

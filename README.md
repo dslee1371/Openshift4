@@ -89,9 +89,10 @@ systemctl disable --now firewalld.service
 [all:vars]
 ansible_user=core
 ansible_become=True 
+ansible-become_method=sudo
+ansible_become_pass='!vbcjwps1!'
 
-
-openshift_kubeconfig_path="~/.kube/auth/config" 
+openshift_kubeconfig_path="~/.kube/auth/kubeconfig" 
 
 [new_workers] 
 dslee-worker03.t1.futuregen-ocp4.lab

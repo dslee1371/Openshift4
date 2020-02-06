@@ -60,7 +60,7 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' t1.futuregen-ocp4.lab.rr.z
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' dhcpd.conf
 sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 ```
-## add node
+## Add worker node as RHEL 7.6
 - subject : add 2 node th rhel 7.6 
 - copy that template to new vm on the vcenter 
 - change vm resource like cpu, memory, network (2 servers, referenced recommand spec in document)
@@ -70,6 +70,14 @@ sed -i 's/futuregen-ocp4.lab/t1.futuregen-ocp4.lab/g' haproxy.cfg
 - dns add ip record
 - server boot
 - change static ip addr to dynamic ip addr
+- add core user and ssh key copy configuration
+```
+sudo useradd -m core
+sudo passwd core
+# edit '/etc/sudoers' and then add in line like that 'core ALL=(ALL) ALL'
+ssh-copy-id core@[IP]
+# Try ssh connect for each host of 2 worker node
+``` 
 - subscipriton configure and package install 
 ```
 subsctiption-manager 4.3 enable
@@ -79,8 +87,8 @@ systemctl disable --now firewalld.service
 - create inventory
 ```
 [all:vars]
-ansible_user=root 
-#ansible_become=True 
+ansible_user=core
+ansible_become=True 
 
 
 openshift_kubeconfig_path="~/.kube/auth/config" 
@@ -97,5 +105,5 @@ ansible-playbook -i /root/hosts-addnode playbooks/scaleup.yml
 
 ## to do list
 - [ ] compare haproxy for 443 port
-- [ ] check write permission for registry pv 
+- [x] check write permission for registry pv 
 - [x] Add the woker node as rhel opearating system 

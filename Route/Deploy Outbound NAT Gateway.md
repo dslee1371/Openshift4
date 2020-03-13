@@ -30,7 +30,7 @@ The internal node should now be able to access the public internet through the g
 
 
 
-## fix Error
+## fix Error - If you make a mistake
 ```
 firewall-cmd --list-all-zones
 firewall-cmd --permanent --zone=external --remove-masquerade

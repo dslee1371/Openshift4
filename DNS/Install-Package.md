@@ -1,2 +1,2 @@
 ## install package
-yum install bind-utils
+yum -y install bind bind-utils

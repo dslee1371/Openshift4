@@ -1,0 +1,12 @@
+# Edit '/etc/named.conf' and set
+fileter-aaaa-on-v4 yes;
+
+# Disalbe bind from listening on IPv6 interfaces by commenting following
+#listen-on-v6 port 53 { ::1; };
+  in /etc/named.conf file
+# Edit /etc/sysconfig/named and set
+OPTIONS='-4'
+  In case you use vim to edit the file, then do not worry about red coloring of the file
+  
+# Finally restart bind by using:
+systemctl restart named

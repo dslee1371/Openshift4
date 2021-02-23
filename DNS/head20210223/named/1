@@ -1,0 +1,31 @@
+$TTL 60
+@       IN SOA  dns.ocp2.fu.igotit.co.kr. root.ocp2.fu.igotit.co.kr. (
+                                        1       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+                IN      NS      ns.ocp2.fu.igotit.co.kr.;
+		IN      A	192.168.2.1;
+ns		IN      A	192.168.2.1;
+bastion         IN      A       192.168.2.2;
+bootstrap       IN      A       192.168.2.10;
+master01        IN      A       192.168.2.11;
+master02        IN      A       192.168.2.12;
+master03        IN      A       192.168.2.13;
+infra01         IN      A       192.168.2.21;
+infra02         IN      A       192.168.2.22;
+worker01        IN      A       192.168.2.23;
+worker02        IN      A       192.168.2.24;
+api		IN      A       192.168.2.1;
+api-int         IN      A       192.168.2.1;
+*.apps          IN      A       192.168.2.1;
+etcd-0          IN      A	192.168.2.11;
+etcd-1          IN      A	192.168.2.12;
+etcd-2          IN      A	192.168.2.13;
+;
+_etcd-server-ssl._tcp  86400 IN    SRV 0        10     2380 etcd-0
+_etcd-server-ssl._tcp  86400 IN    SRV 0        10     2380 etcd-1
+_etcd-server-ssl._tcp  86400 IN    SRV 0        10     2380 etcd-2
+;
+

@@ -1,0 +1,12 @@
+$TTL 20
+@       IN      SOA     ns.igotit.co.kr.   root (
+                        2019070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      ns.igotit.co.kr.
+;
+; syntax is "last octet" and the host must have fqdn with trailing dot
+161      IN      PTR     master01.oss1.fu.igotit.co.kr.
+;

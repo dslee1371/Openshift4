@@ -1,0 +1,83 @@
+$TTL 300       ; 1 hour
+igotit.co.kr.             IN SOA  ns.igotit.co.kr. dns.igotit.co.kr. (
+                                  2007040461 ; serial
+                                  7200       ; refresh (2 hours)
+                                  3600       ; retry (1 hour)
+                                  604800     ; expire (1 week)
+                                  3600       ; minimum (1 hour)
+                                 )
+
+		NS      ns.igotit.co.kr.
+		NS      ns1.igotit.co.kr.
+		NS      ns2.igotit.co.kr.
+                IN	A	192.168.1.254
+www             IN	A	192.168.1.254
+dns		IN	A	192.168.1.100
+ovirt		IN	A	192.168.1.253
+ns              IN	A	10.0.10.212
+ns1		IN	A	10.0.10.212
+ns2		IN	A	10.0.10.212
+lb01		IN	A	192.168.1.151
+*.apps.ocp3	IN	A	192.168.1.151
+*.apps.ocp4	IN	A	192.168.1.151
+registry	IN	A	192.168.1.252
+nfs		IN	A	192.168.1.252
+gluster		IN	A	192.168.1.251
+repo		IN	A	192.168.1.252
+ldap		IN	A	192.168.1.150
+;
+; ocp4 start
+;
+bastion.ocp4	IN	A	192.168.1.152
+bootstrap.ocp4	IN	A	192.168.1.160
+master01.ocp4	IN	A	192.168.1.161
+master02.ocp4	IN	A	192.168.1.162
+master03.ocp4	IN	A	192.168.1.163
+;
+worker01.ocp4	IN	A	192.168.1.171
+worker02.ocp4	IN	A	192.168.1.172
+worker03.ocp4	IN	A	192.168.1.173
+worker04.ocp4	IN	A	192.168.1.174
+;
+api.ocp4	IN	A	192.168.1.151
+api-int.ocp4	IN	A	192.168.1.151
+;
+etcd-0.ocp4	IN	A	192.168.1.161
+etcd-1.ocp4	IN	A	192.168.1.162
+etcd-2.ocp4	IN	A	192.168.1.163
+;
+_etcd-server-ssl._tcp.ocp4  86400 IN    SRV 0        10     2380 etcd-0.ocp4
+_etcd-server-ssl._tcp.ocp4  86400 IN    SRV 0        10     2380 etcd-1.ocp4
+_etcd-server-ssl._tcp.ocp4  86400 IN    SRV 0        10     2380 etcd-2.ocp4
+;
+; ocp4 stop
+;
+;
+; ocp3 start
+;
+master01.ocp3   IN      A       192.168.1.191
+master02.ocp3   IN      A       192.168.1.192
+;
+infra01.ocp3    IN      A       192.168.1.201
+infra02.ocp3    IN      A       192.168.1.202
+;
+worker01.ocp3   IN      A       192.168.1.212
+worker02.ocp3   IN      A       192.168.1.212
+;
+api.ocp3	IN	A	192.168.1.151
+;
+; ocp3 stop
+;
+;
+; k8s stop
+master01.k8s	IN	A	192.168.1.141
+api.k8s		IN	A	192.168.1.141
+dashboard.k8s	IN	A	192.168.1.141
+worker01.k8s	IN	A	192.168.1.146
+;
+oss		IN	A	192.168.1.241
+rhv		IN	A	192.168.1.254
+;
+; fu
+;
+ldap.fu		IN	A	192.168.6.2

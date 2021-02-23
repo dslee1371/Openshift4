@@ -1,0 +1,43 @@
+$TTL 60
+@       IN SOA  dns.ocp2.fu.igotit.co.kr. root.ocp2.fu.igotit.co.kr. (
+                                        1       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+                IN      NS      ns.ocp2.fu.igotit.co.kr.;
+		IN      A	192.168.2.1;
+ns		IN      A	192.168.2.1;
+registry	IN      A       192.168.2.2;
+api		IN      A       192.168.2.1;
+api-int         IN      A       192.168.2.1;
+*.apps          IN      A       192.168.2.1;
+;
+
+bastion.yg      IN      A       192.168.2.100;
+registry.yg     IN      A       192.168.2.100;
+master01.yg     IN      A       192.168.2.101;
+master02.yg     IN      A       192.168.2.102;
+master03.yg     IN      A       192.168.2.103;
+worker01.yg     IN      A       192.168.2.111;
+worker02.yg     IN      A       192.168.2.112;
+worker03.yg     IN      A       192.168.2.113;
+worker04.yg     IN      A       192.168.2.114;
+worker05.yg	IN	A	192.168.2.115;
+api.yg          IN      A       192.168.2.1;
+*.apps.yg       IN      A       192.168.2.1;
+;
+
+bastion.hyg      IN      A       192.168.2.150;
+bootstrap.hyg   IN      A       192.168.2.160;
+master01.hyg     IN      A       192.168.2.151;
+master02.hyg     IN      A       192.168.2.152;
+master03.hyg     IN      A       192.168.2.153;
+worker01.hyg     IN      A       192.168.2.161;
+worker02.hyg     IN      A       192.168.2.162;
+worker03.hyg	 IN	 A	 192.168.2.163;
+api.hyg          IN      A        192.168.2.1;
+api-int.hyg	 IN	 A 	  192.168.2.1;
+*.apps.hyg       IN      A        192.168.2.1;
+
+

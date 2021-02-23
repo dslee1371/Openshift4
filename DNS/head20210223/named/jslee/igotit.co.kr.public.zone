@@ -1,0 +1,31 @@
+$TTL 300       ; 1 hour
+igotit.co.kr.             IN SOA  ns.igotit.co.kr. dns.igotit.co.kr. (
+                                  2007040461 ; serial
+                                  7200       ; refresh (2 hours)
+                                  3600       ; retry (1 hour)
+                                  604800     ; expire (1 week)
+                                  3600       ; minimum (1 hour)
+                                 )
+
+		NS      ns.igotit.co.kr.
+		NS      ns1.igotit.co.kr.
+		NS      ns2.igotit.co.kr.
+                IN	A	1.11.70.161
+www             IN	A	1.11.70.161
+ns              IN	A	112.216.178.153
+ns1		IN	A	112.216.178.153
+ns2		IN	A	112.216.178.153
+ns3		IN	A	112.216.178.153
+ns4		IN	A	112.216.178.153
+
+home		IN	NS	ns1.home
+home		IN	NS	ns2.home
+ns1.home	IN	A	1.11.70.161
+ns2.home	IN	A	1.11.70.161
+
+dns		IN	A	1.11.70.161
+ovirt		IN	A	1.11.70.161
+*.apps.ocp4	IN	A	1.11.70.161
+*.apps.rocp4	IN	A	1.11.70.161
+*.apps.ocp3	IN	A	1.11.70.161
+dashboard.k8s	IN	A	1.11.70.161

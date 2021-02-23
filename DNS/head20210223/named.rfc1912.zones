@@ -1,0 +1,227 @@
+// named.rfc1912.zones:
+//
+// Provided by Red Hat caching-nameserver package 
+//
+// ISC BIND named zone configuration for zones recommended by
+// RFC 1912 section 4.1 : localhost TLDs and address zones
+// and http://www.ietf.org/internet-drafts/draft-ietf-dnsop-default-local-zones-02.txt
+// (c)2007 R W Franks
+// 
+// See /usr/share/doc/bind*/sample/ for example named configuration files.
+//
+view "trust" {
+        match-clients { trust; };
+        recursion yes;
+        additional-from-auth yes;
+        additional-from-cache yes;
+
+	zone "." IN {
+	        type hint;
+	        file "named.ca";
+	};
+
+	zone "localhost.localdomain" IN {
+		type master;
+		file "named.localhost";
+		allow-update { none; };
+	};
+	
+	zone "localhost" IN {
+		type master;
+		file "named.localhost";
+		allow-update { none; };
+	};
+	
+	zone "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa" IN {
+		type master;
+		file "named.loopback";
+		allow-update { none; };
+	};
+	
+	zone "1.0.0.127.in-addr.arpa" IN {
+		type master;
+		file "named.loopback";
+		allow-update { none; };
+	};
+	
+	zone "0.in-addr.arpa" IN {
+		type master;
+		file "named.empty";
+		allow-update { none; };
+	};
+
+
+        zone "igotit.co.kr" in {
+                type master;
+                file "jslee/igotit.co.kr.internal.zone";
+        };
+        zone "1.168.192.in-addr.arpa" IN {
+                type master;
+                file "jslee/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+// fu domain 
+	
+        zone "ocp1.fu.igotit.co.kr" in {
+                type master;
+                file "ocp1/igotit.co.kr.internal.zone";
+        };
+        zone "7.168.192.in-addr.arpa" IN {
+                type master;
+                file "ocp1/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+        zone "ocp2.fu.igotit.co.kr" in {
+                type master;
+                file "ocp2/igotit.co.kr.internal.zone";
+        };
+        zone "2.168.192.in-addr.arpa" IN {
+                type master;
+                file "ocp2/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+        zone "ocp3.fu.igotit.co.kr" in {
+                type master;
+                file "ocp3/igotit.co.kr.internal.zone";
+        };
+        zone "3.168.192.in-addr.arpa" IN {
+                type master;
+                file "ocp3/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+        zone "oss1.fu.igotit.co.kr" in {
+                type master;
+                file "oss1/igotit.co.kr.internal.zone";
+        };
+        zone "4.168.192.in-addr.arpa" IN {
+                type master;
+                file "oss1/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+        zone "oss2.fu.igotit.co.kr" in {
+                type master;
+                file "oss2/igotit.co.kr.internal.zone";
+        };
+        zone "5.168.192.in-addr.arpa" IN {
+                type master;
+                file "oss2/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+        zone "test.fu.igotit.co.kr" in {
+                type master;
+                file "test/igotit.co.kr.internal.zone";
+        };
+        zone "6.168.192.in-addr.arpa" IN {
+                type master;
+                file "test/igotit.co.kr.rr";
+                allow-update { none; };
+        };
+
+
+
+};
+
+
+view "DNS" {
+        match-clients { DNS; };
+        recursion yes;
+        additional-from-auth yes;
+        additional-from-cache yes;
+        zone "." IN {
+                type hint;
+                file "named.ca";
+        };
+
+        zone "igotit.co.kr" in {
+                type master;
+                file "jslee/igotit.co.kr.public.zone";
+        };
+
+        zone "ocp1.fu.igotit.co.kr" in {
+                type master;
+                file "ocp1/igotit.co.kr.public.zone";
+        };
+
+        zone "ocp2.fu.igotit.co.kr" in {
+                type master;
+                file "ocp2/igotit.co.kr.public.zone";
+        };
+
+        zone "ocp3.fu.igotit.co.kr" in {
+                type master;
+                file "ocp3/igotit.co.kr.public.zone";
+        };
+
+        zone "oss1.fu.igotit.co.kr" in {
+                type master;
+                file "oss1/igotit.co.kr.public.zone";
+        };
+
+        zone "oss2.fu.igotit.co.kr" in {
+                type master;
+                file "oss2/igotit.co.kr.public.zone";
+        };
+
+        zone "test.fu.igotit.co.kr" in {
+                type master;
+                file "test/igotit.co.kr.public.zone";
+        };
+
+
+};
+
+
+view "global" {
+        match-clients { ANY; };
+        recursion no;
+        additional-from-auth yes;
+        additional-from-cache yes;
+        zone "." IN {
+                type hint;
+                file "named.ca";
+        };
+
+        zone "igotit.co.kr" in {
+                type master;
+                file "jslee/igotit.co.kr.public.zone";
+        };
+
+
+        zone "ocp1.fu.igotit.co.kr" in {
+                type master;
+                file "ocp1/igotit.co.kr.public.zone";
+        };
+
+        zone "ocp2.fu.igotit.co.kr" in {
+                type master;
+                file "ocp2/igotit.co.kr.public.zone";
+        };
+
+        zone "ocp3.fu.igotit.co.kr" in {
+                type master;
+                file "ocp3/igotit.co.kr.public.zone";
+        };
+
+        zone "oss1.fu.igotit.co.kr" in {
+                type master;
+                file "oss1/igotit.co.kr.public.zone";
+        };
+
+        zone "oss2.fu.igotit.co.kr" in {
+                type master;
+                file "oss2/igotit.co.kr.public.zone";
+        };
+
+        zone "test.fu.igotit.co.kr" in {
+                type master;
+                file "test/igotit.co.kr.public.zone";
+        };
+
+};
+

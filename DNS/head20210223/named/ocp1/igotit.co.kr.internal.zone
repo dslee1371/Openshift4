@@ -1,0 +1,24 @@
+$TTL 300       ; 1 hour
+@             IN SOA  ns.igotit.co.kr. dns.igotit.co.kr. (
+                                  2007040461 ; serial
+                                  7200       ; refresh (2 hours)
+                                  3600       ; retry (1 hour)
+                                  604800     ; expire (1 week)
+                                  3600       ; minimum (1 hour)
+                                 )
+
+		NS      ns.igotit.co.kr.
+		NS      ns1.igotit.co.kr.
+		NS      ns2.igotit.co.kr.
+                IN	A	192.168.1.254
+;
+; ocp4 start
+;
+bastion		IN	A	192.168.7.152
+bootstrap	IN      A       192.168.7.152
+master01	IN	A	192.168.7.152
+master02	IN	A	192.168.7.152
+master03	IN	A	192.168.7.152
+worker01	IN	A	192.168.7.152
+worker02	IN	A	192.168.7.152
+;

@@ -1,0 +1,24 @@
+$TTL 60
+@       IN SOA  dns.ocp3.fu.igotit.co.kr. root.ocp3.fu.igotit.co.kr. (
+                                        1       ; serial
+                                        1D      ; refresh
+                                        1H      ; retry
+                                        1W      ; expire
+                                        3H )    ; minimum
+                IN      NS      ns.ocp3.fu.igotit.co.kr.;
+                IN      A       192.168.3.1;
+ns              IN      A       192.168.3.1;
+api             IN      A       192.168.3.1;
+api-int         IN      A       192.168.3.1;
+*.apps          IN      A       192.168.3.1;
+;
+
+bastion.young   IN      A       192.168.3.60;
+master01.young  IN      A       192.168.3.61;
+worker01.young  IN      A       192.168.3.71;
+worker02.young  IN      A       192.168.3.72;
+api.young       IN      A       192.168.3.1;
+*.apps.young    IN      A       192.168.3.1;
+;
+
+

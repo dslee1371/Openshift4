@@ -1,0 +1,34 @@
+$TTL 20
+@       IN      SOA     ns.igotit.co.kr.   root (
+                        2019070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+        IN      NS      ns.igotit.co.kr.
+;
+; syntax is "last octet" and the host must have fqdn with trailing dot
+
+100      IN      PTR     bastion.yg
+100      IN      PTR     registry.yg
+101      IN      PTR     master01.yg
+102      IN      PTR     master02.yg
+103      IN      PTR     master03.yg
+111      IN      PTR     worker01.yg
+112      IN      PTR     worker02.yg
+113      IN      PTR     worker03.yg
+114      IN      PTR     worker04.yg
+115	 IN	 PTR	 worker05.yg
+;
+
+150      IN      PTR    bastion.hyg      
+160      IN      PTR    bootsatrap.hyg   
+151      IN      PTR    master01.hyg    
+152      IN      PTR    master02.hyg    
+153      IN      PTR    master03.hyg     
+161      IN      PTR    worker01.hyg    
+162      IN      PTR    worker02.hyg    
+163	 IN	 PTR 	worker03.hyg
+1        IN      PTR    api.hyg
+1        IN      PTR    api-int.hyg
+;

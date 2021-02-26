@@ -1,39 +1,40 @@
-# ocp43install
+# Installation
 
-## create ignition
+## Mirror registry
 ```
-openshift-install create manifests --dir=/root/ocp43-install-20200201-1
++ Evironments
+OCP_RELEASE=4.6.15
+LOCAL_REGISTRY='registry.oss2.fu.igotit.co.kr:5000'
+LOCAL_REPOSITORY='ocp4/openshift4'
+PRODUCT_REPO='openshift-release-dev'
+LOCAL_SECRET_JSON='/opt/ocp4.6/pull/pull-secret-20210209.json'
+RELEASE_NAME='ocp-release'
+ARCHITECTURE='x86_64'
+REMOVABLE_MEDIA_PATH=''
 
-#Modify the manifests/cluster-scheduler-02-config.yml Kubernetes manifest file to prevent Pods from being scheduled on the control plane machines:
-1. Open the manifests/cluster-scheduler-02-config.yml file.
-2. Locate the mastersSchedulable parameter and set its value to False.
-3. Save and exit the file.
++ to dir
+oc adm release mirror -a ${LOCAL_SECRET_JSON} --to-dir=${REMOVABLE_MEDIA_PATH}/mirror quay.io/${PRODUCT_REPO}/${RELEASE_NAME}:${OCP_RELEASE}-${ARCHITECTURE}
 
-openshift-install create ignition-configs --dir=/root/ocp43-install-20200201-1
-
-openshift-install --dir=/root/ocp43-install-20200201-1 wait-for bootstrap-complete --log-level=info
-
-openshift-install --dir=/root/ocp43-install-20200202-1 wait-for install-complete 
-
-export KUBECONFIG=/root/ocp43-install-20200202-1/auth/kubeconfig
-
-```
-
-## create a new repository on the command line
-```
-echo "# ocp43install" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/dslee1371/ocp43install.git
-git push -u origin master
++ from dir
+GODEBUG=x509ignoreCN=0 oc image mirror -a ${LOCAL_SECRET_JSON} --from-dir=${REMOVABLE_MEDIA_PATH}/mirror "file://openshift/release:${OCP_RELEASE}*" ${LOCAL_REGISTRY}/${LOCAL_REPOSITORY}
 ```
 
-## push an existing repository from the command line
+## Openshift 4 Installation
 ```
-git remote add origin https://github.com/dslee1371/ocp43install.git
-git push -u origin master
++ Define manifest dir
+/opt/ocp4.6/ocp-install-manifest
+
++ install commands
+openshift-install create manifests --dir=/opt/ocp4.6/ocp-install-20210223
+openshift-install create ignition-configs --dir=/opt/ocp4.6/ocp-install-20210223
+
 ```
+## remark
+```
+echo -n 'admin' | base64
+```
+
+
 
 ## define naming rule 
 - **domain name** : futuregen-ocp4.lab

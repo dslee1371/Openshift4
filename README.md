@@ -52,7 +52,10 @@ oc adm catalog build --appregistry-org redhat-operators \
   --to=registry.oss2.fu.igotit.co.kr:5000/olm/redhat-operators:v1 \
   --insecure -a /opt/ocp4.6/pull/pull-secret-20210209.json
 
-GODEBUG=x509ignoreCN=0 oc adm catalog mirror -a /opt/ocp4.6/pull/pull-secret-20210209.json registry.oss2.fu.igotit.co.kr:5000/olm/redhat-operators:v1 registry.oss2.fu.igotit.co.kr:5000
+GODEBUG=x509ignoreCN=0 oc adm catalog mirror \
+  -a /opt/ocp4.6/pull/pull-secret-20210209.json \
+  registry.oss2.fu.igotit.co.kr:5000/olm/redhat-operators:v1 \
+  registry.oss2.fu.igotit.co.kr:5000 
 
 ```
 

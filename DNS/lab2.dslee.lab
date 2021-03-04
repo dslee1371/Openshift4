@@ -1,0 +1,38 @@
+$TTL 300       ; 1 hour 
+@             IN SOA  ns.lab2.dslee.lab. dns.lab2.dslee.lab. ( 
+                                  2007040461 ; serial 
+                                  7200       ; refresh (2 hours) 
+                                  3600       ; retry (1 hour) 
+                                  604800     ; expire (1 week) 
+                                  3600       ; minimum (1 hour) 
+                                 ) 
+		NS      ns.lab2.dslee.lab. 
+		NS      ns1.lab2.dslee.lab. 
+		NS      ns2.lab2.dslee.lab. 
+                IN	A	172.10.20.10
+
+ns	IN	A	172.10.20.10
+ns1	IN	A	172.10.20.10
+ns2	IN	A	172.10.20.10
+; 
+; ocp4 start 
+; 
+l2-10-base1	IN	A	172.10.20.10
+l2-11-nfs1	IN	A	172.10.20.11
+l2-30-bootstrap	IN	A	172.10.20.30
+l2-31-master1	IN	A	172.10.20.31
+l2-32-master2	IN	A	172.10.20.32
+l2-33-master3	IN	A	172.10.20.33
+l2-41-infra1	IN	A	172.10.20.41
+l2-42-infra2	IN	A	172.10.20.42
+etcd-0	IN	A	172.10.20.31
+etcd-1	IN	A	172.10.20.32
+etcd-2	IN	A	172.10.20.33
+l2-registrymirror	IN	A	172.10.20.11
+api	IN	A	172.10.20.10
+api-int	IN	A	172.10.20.10
+*.apps		IN	A	192.168.5.10
+
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-0 
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-1 
+_etcd-server-ssl._tcp   IN SRV 0 10 2380 etcd-2
